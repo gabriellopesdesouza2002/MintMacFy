@@ -1,0 +1,52 @@
+# Define que todos os arquivos de texto devem usar LF como fim de linha
+* text=auto eol=lf
+
+# Garante que scripts shell (.sh) sejam tratados como texto e usem LF
+*.sh text eol=lf
+
+# Garante que arquivos Markdown (.md) sejam tratados como texto e usem LF
+*.md text eol=lf
+
+# Garante que arquivos Python (.py) sejam tratados como texto e usem LF
+*.py text eol=lf
+
+# Garante que arquivos de configuração (.ini, .cfg, .conf) sejam tratados como texto e usem LF
+*.ini text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+
+# Garante que arquivos YAML (.yaml, .yml) sejam tratados como texto e usem LF
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Garante que arquivos JSON (.json) sejam tratados como texto e usem LF
+*.json text eol=lf
+
+# Garante que arquivos HTML (.html) sejam tratados como texto e usem LF
+*.html text eol=lf
+
+# Garante que arquivos CSS (.css) sejam tratados como texto e usem LF
+*.css text eol=lf
+
+# Garante que arquivos JavaScript (.js) sejam tratados como texto e usem LF
+*.js text eol=lf
+
+# Garante que arquivos TypeScript (.ts) sejam tratados como texto e usem LF
+*.ts text eol=lf
+
+# Garante que arquivos XML (.xml) sejam tratados como texto e usem LF
+*.xml text eol=lf
+
+# Garante que arquivos de texto puro (.txt) sejam tratados como texto e usem LF
+*.txt text eol=lf
+
+# Ignora arquivos binários (não aplica conversão de fim de linha)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
