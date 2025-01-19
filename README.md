@@ -24,14 +24,6 @@ Would you like to download Linux Mint Cinnamon for some reason? Follow the link:
 
 https://mirrors.cicku.me/linuxmint/iso/stable/22/linuxmint-22-cinnamon-64bit.iso
 
-<<<<<<< HEAD
-=======
-## Como instalar?
-
-
-Run git clone on MintMacFy
-
->>>>>>> 8ed1636 (Commit)
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](https://chat.deepseek.com/a/chat/s/LICENSE).
