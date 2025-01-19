@@ -24,9 +24,9 @@ Would you like to download Linux Mint Cinnamon for some reason? Follow the link:
 
 https://mirrors.cicku.me/linuxmint/iso/stable/22/linuxmint-22-cinnamon-64bit.iso
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [Licença MIT](https://chat.deepseek.com/a/chat/s/LICENSE).
+This project is licensed under the [Licença MIT](LICENSE).
 
 ## Isenção de Responsabilidade
 

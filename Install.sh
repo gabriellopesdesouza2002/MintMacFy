@@ -8,29 +8,79 @@ echo "----------------------------------------------"
 BACKUP_DIR="$(pwd)/mintmacify_backup_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$BACKUP_DIR"
 
+echo "Diretório de backup criado em: $BACKUP_DIR"
+
 # Backup das configurações do Cinnamon (dconf)
+echo "Fazendo backup das configurações do Cinnamon..."
 dconf dump / > "$BACKUP_DIR/cinnamon_settings_backup.dconf"
+echo "Backup do Cinnamon concluído."
 
-# Backup dos temas, ícones e cursores instalados
-mkdir -p "$BACKUP_DIR/themes"
-cp -r /usr/share/themes/* "$BACKUP_DIR/themes/" 2>/dev/null || true
-mkdir -p "$BACKUP_DIR/icons"
-cp -r /usr/share/icons/* "$BACKUP_DIR/icons/" 2>/dev/null || true
-mkdir -p "$BACKUP_DIR/cursors"
-cp -r /usr/share/icons/* "$BACKUP_DIR/cursors/" 2>/dev/null || true
+# Backup dos temas
+echo "Fazendo backup dos temas..."
+if [ -d "/usr/share/themes" ]; then
+    mkdir -p "$BACKUP_DIR/themes"
+    rsync -a /usr/share/themes/ "$BACKUP_DIR/themes/" 2>/dev/null || true
+    echo "Backup dos temas concluído."
+else
+    echo "Diretório /usr/share/themes não encontrado. Pulando backup de temas."
+fi
 
-# Backup dos arquivos de configuração do GTK
-mkdir -p "$BACKUP_DIR/gtk"
-cp -r ~/.config/gtk-* "$BACKUP_DIR/gtk/" 2>/dev/null || true
+# Backup dos ícones
+echo "Fazendo backup dos ícones..."
+if [ -d "/usr/share/icons" ]; then
+    mkdir -p "$BACKUP_DIR/icons"
+    rsync -a /usr/share/icons/ "$BACKUP_DIR/icons/" 2>/dev/null || true
+    echo "Backup dos ícones concluído."
+else
+    echo "Diretório /usr/share/icons não encontrado. Pulando backup de ícones."
+fi
+
+# Backup dos cursores
+echo "Fazendo backup dos cursores..."
+if [ -d "/usr/share/icons" ]; then
+    mkdir -p "$BACKUP_DIR/cursors"
+    rsync -a /usr/share/icons/ "$BACKUP_DIR/cursors/" 2>/dev/null || true
+    echo "Backup dos cursores concluído."
+else
+    echo "Diretório /usr/share/icons não encontrado. Pulando backup de cursores."
+fi
+
+# Backup das configurações do GTK
+echo "Fazendo backup das configurações do GTK..."
+if [ -d ~/.config/gtk-* ]; then
+    mkdir -p "$BACKUP_DIR/gtk"
+    rsync -a ~/.config/gtk-*/ "$BACKUP_DIR/gtk/" 2>/dev/null || true
+    echo "Backup do GTK concluído."
+else
+    echo "Diretório ~/.config/gtk-* não encontrado. Pulando backup do GTK."
+fi
 
 # Backup das configurações do Plank
-mkdir -p "$BACKUP_DIR/plank"
-cp -r ~/.config/plank "$BACKUP_DIR/plank/" 2>/dev/null || true
-cp -r ~/.local/share/plank "$BACKUP_DIR/plank/" 2>/dev/null || true
+echo "Fazendo backup das configurações do Plank..."
+if [ -d ~/.config/plank ]; then
+    mkdir -p "$BACKUP_DIR/plank"
+    rsync -a ~/.config/plank/ "$BACKUP_DIR/plank/" 2>/dev/null || true
+    echo "Backup do Plank concluído."
+else
+    echo "Diretório ~/.config/plank não encontrado. Pulando backup do Plank."
+fi
+
+if [ -d ~/.local/share/plank ]; then
+    rsync -a ~/.local/share/plank/ "$BACKUP_DIR/plank/" 2>/dev/null || true
+    echo "Backup do Plank (local) concluído."
+else
+    echo "Diretório ~/.local/share/plank não encontrado. Pulando backup do Plank (local)."
+fi
 
 # Backup das configurações do Ulauncher
-mkdir -p "$BACKUP_DIR/ulauncher"
-cp -r ~/.config/ulauncher "$BACKUP_DIR/ulauncher/" 2>/dev/null || true
+echo "Fazendo backup das configurações do Ulauncher..."
+if [ -d ~/.config/ulauncher ]; then
+    mkdir -p "$BACKUP_DIR/ulauncher"
+    rsync -a ~/.config/ulauncher/ "$BACKUP_DIR/ulauncher/" 2>/dev/null || true
+    echo "Backup do Ulauncher concluído."
+else
+    echo "Diretório ~/.config/ulauncher não encontrado. Pulando backup do Ulauncher."
+fi
 
 echo "Backup criado com sucesso em: $BACKUP_DIR"
 
