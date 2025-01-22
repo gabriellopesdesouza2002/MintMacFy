@@ -28,6 +28,17 @@ https://mirrors.cicku.me/linuxmint/iso/stable/22/linuxmint-22-cinnamon-64bit.iso
 
 This project is licensed under the [Licença MIT](LICENSE).
 
-## Isenção de Responsabilidade
+## Disclaimer
 
-Este projeto não é afiliado, endossado ou patrocinado pela Apple Inc. macOS é uma marca registrada da Apple Inc. **Este projeto é apenas uma implementação independente de temas e ícones inspirados no estilo visual do macOS.**
+This project is not affiliated with, endorsed or sponsored by Apple Inc. macOS is a registered trademark of Apple Inc. **This project is just an independent implementation of themes and icons inspired by the visual style of macOS.**
+
+## Credits
+
+This project uses the following resources:
+
+* **WhiteSur GTK Theme** : [Vinceliuice](https://github.com/vinceliuice/WhiteSur-gtk-theme)
+* **WhiteSur Icon Theme** : [Vinceliuice](https://github.com/vinceliuice/WhiteSur-icon-theme)
+* **McMojave Cursors** : [Vinceliuice](https://github.com/vinceliuice/McMojave-cursors)
+* **Ulauncher** : [Agornostal](https://ulauncher.io/)
+* **Plank** : [Rico Tzschichholz e colaboradores](https://launchpad.net/plank)
+* **WhiteSur Wallpapers** : [Vinceliuice](https://github.com/vinceliuice/WhiteSur-wallpapers)
